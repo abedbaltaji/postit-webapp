@@ -1,0 +1,14 @@
+<div class="transparentBg">
+    <div class="postitWindow" >
+
+        <label class="theLabels">Title</label>
+        <input class="note-name" placeholder="Enter post-it title ..." type="text" [(ngModel)]="newNoteName"/>
+        <label class="theLabels">Post-it content</label>
+        <textarea class="note-content" placeholder="Enter post-it content ..."  [(ngModel)]="newNoteContent"></textarea>
+        <div class="buttons-row">
+            <button class="cancel" (click)="hide()">Cancel</button>
+            <button class="add" (click)="add_note()">Submit</button>
+        </div>
+        
+    </div>
+</div>

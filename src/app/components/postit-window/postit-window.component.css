@@ -1,0 +1,68 @@
+.transparentBg {
+    height: 100%;
+    width: 100%;
+    background-color: #4d4b4b;
+    opacity:0.95;
+    position:absolute;
+    justify-content: center;
+}
+
+.postitWindow {
+    width:480px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #1c54cc;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    /* border: solid #053121; */
+}
+
+.theLabels{
+    /* width:100px; */
+    float: left;
+    margin-bottom: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
+
+.note-name{
+    padding: 5px;
+    width: 95%;
+    float:right;
+    margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
+
+.note-content{
+    padding: 10px;
+    width:95%;
+    height: 150px;
+    float:right;
+    resize: none; 
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.buttons-row {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancel {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+    width: 70px;
+}
+
+.add {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    width: 70px;
+    border-radius: 6px;
+}

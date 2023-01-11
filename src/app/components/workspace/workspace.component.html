@@ -1,0 +1,19 @@
+<div class="appbar">
+    <div class="appbarText">My Notes</div>
+    <!-- <button class="addNoteButton" onclick="enterAddNoteMode()">+</button> -->
+    <div *ngIf="!inAddMode" class="Top"> 
+        <i  (click)="show()" class="fas fa-plus"></i>
+    </div>
+</div>
+<app-postit-window [hidden]="!inAddMode" (postitWindowState)="updateWindowState($event)" [noteToEdit]="editNoteId"></app-postit-window>
+<div class="workspace">
+    <div *ngFor="let note of myNotes;" class="note">
+        <div class="noteSettings">
+            <i class="fas fa-cog" (click)="edit_note(note.id)"></i>
+            <i class="fas fa-minus-square"(click)="delete_note(note.id)"></i>
+        </div>
+        <div class="noteName">{{ note.name }}</div>
+        <textarea class="noteContent" readonly="true">{{ note.content }}</textarea>
+    </div>
+</div> 
+ 
