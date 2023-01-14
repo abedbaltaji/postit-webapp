@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, SimpleChanges, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Note, Notes } from 'src/app/models/Note';
 
 @Component({
@@ -14,6 +14,7 @@ export class PostitWindowComponent implements OnInit {
   
   newNoteName:string= "";
   newNoteContent:string= "";
+  tempNote:Note;
 
   hide(){ // on click cancel
 
@@ -47,6 +48,22 @@ export class PostitWindowComponent implements OnInit {
 
     }
     
+  }
+
+  fetchNoteToEdit() {
+    this.tempNote=  Notes.getNoteById(this.noteToEdit);
+    this.newNoteName=this.tempNote.name;
+    this.newNoteContent=this.tempNote.content;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+   
+    for (const propName in changes) {
+      const chng = changes[propName];
+      if (chng.currentValue !== undefined){
+        this.fetchNoteToEdit();
+      }
+    }
   }
 
   ngOnInit(): void {
